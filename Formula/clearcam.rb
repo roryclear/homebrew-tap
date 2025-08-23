@@ -9,6 +9,7 @@ class Clearcam < Formula
 
   def install
     bin.install "clearcam/clearcam"
+    chmod 0755, bin/"clearcam"
   end
 
   test do
