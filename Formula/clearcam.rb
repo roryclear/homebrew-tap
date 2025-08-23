@@ -1,4 +1,3 @@
-# clearcam.rb
 class Clearcam < Formula
   desc "NVR with AI object detection."
   homepage "https://github.com/roryclear/clearcam"
@@ -8,10 +7,20 @@ class Clearcam < Formula
   depends_on "ffmpeg"
 
   def install
-    bin.install "clearcam/clearcam"
-    chmod 0755, bin/"clearcam"
+    system "pwd"
+    system "ls", "-la"
+    
+    if Dir.exist?("clearcam")
+      puts "clearcam directory exists, contents:"
+      system "ls", "-la", "clearcam"
+      bin.install "clearcam/clearcam"
+      chmod 0755, bin/"clearcam"
+    else
+      puts "clearcam directory does not exist! Current contents:"
+      system "ls", "-laR", "."
+      raise "clearcam directory not found in extracted archive"
+    end
   end
-
   test do
     system "#{bin}/clearcam", "--version"
   end
