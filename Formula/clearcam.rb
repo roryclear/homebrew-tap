@@ -5,10 +5,12 @@ class Clearcam < Formula
   sha256 "cfe653452bbb04f717c01ed501183f78450a59724aab80fbfd238a3c9d3addc5"
   license "AGPL"
   depends_on "ffmpeg"
-  depends_on "python@3.10"
 
   def install
-    bin.install "clearcam"
+    libexec.install Dir["*"]
+    (bin/"clearcam").write <<~EOS
+      "#{libexec}/clearcam" "$@"
+    EOS
     chmod 0755, bin/"clearcam"
   end
 
