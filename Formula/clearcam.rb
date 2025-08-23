@@ -1,5 +1,5 @@
 # clearcam.rb
-class clearcam < Formula
+class Clearcam < Formula
   desc "NVR with AI object detection."
   homepage "https://github.com/roryclear/clearcam"
   url "https://github.com/roryclear/clearcam/releases/download/v1.0.0/clearcam-1.0.0-macos.zip"
