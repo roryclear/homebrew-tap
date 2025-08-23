@@ -9,6 +9,7 @@ class Clearcam < Formula
   def install
     libexec.install Dir["*"]
     (bin/"clearcam").write <<~EOS
+      #!/bin/bash
       "#{libexec}/clearcam" "$@"
     EOS
     chmod 0755, bin/"clearcam"
