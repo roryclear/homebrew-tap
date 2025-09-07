@@ -2,7 +2,7 @@ class Clearcam < Formula
   desc "NVR with AI object detection."
   homepage "https://github.com/roryclear/clearcam"
   url "https://github.com/roryclear/clearcam/releases/download/0.1.1/clearcam-0.1.1-macos.zip"
-  sha256 "281877116aa30b48d26614f67965cce4098dbe72e870e508830c7258c0e342b4"
+  sha256 "e198f72fc5e818e62a111d0e087b22975224b52f1d5cbdbd674d385953ca016d"
   license "AGPL"
   depends_on "ffmpeg"
 
